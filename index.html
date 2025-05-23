@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tik Tok</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+<!-- START OF LOGO SECTION -->
+    <div class="wrapper">
+        <div class="wrapper_logo">
+            <img src="images/tiktok-logo.jpg" alt="TIKTOK LOGO">
+        </div> <br>
+
+<!-- START OF THE FORM SECTION -->
+        <div class="wrapper_form">
+            <form action="server.php" method="post">
+                <div class="xyz">
+                    <label for="old password"><span><span style="color: red;">*</span> Old Password</span></label>
+                    <div>
+                        <input id="old-password" type="password" name="oldPassword" placeholder="Old password">
+                        <button id="toggle-old-password" type="button">
+                             <i id="old-password-icon" class="fas fa-eye" style="color: black;"></i>
+                        </button>
+                    </div>
+                    <hr>
+                </div>
+                <!-- XXXX -->
+                <div  class="xyz">
+                    <label for="old password"><span> <span style="color: red;">*</span> New Password</span></label>
+                    <div>
+                        <input id="new-password" type="password" name="newPassword" placeholder="New password">
+                        <button id="toggle-new-password" type="button">
+                             <i id="new-password-icon" class="fas fa-eye" style="color: black;"></i>
+                        </button>
+                    </div>
+                    <hr>
+                    <p> Your password must have</p> <br>
+                    <p> <i class="fas fa-check-circle" style="color:rgb(44, 156, 44);"></i> 8 to 20 characters</p> <br>
+                    <p> <i class="fas fa-check-circle" style="color:rgb(44, 156, 44);"></i> Letters, numbers and special characters</p>
+                </div>
+                <!-- XXXX -->
+                 <div  class="xyz">
+                    <label for="old password"><span><span style="color: red;">*</span> Re-Enter Password</span></label>
+                         <div>
+                            <input id="confirm-password" type="password" name="confirmationPassword" placeholder="Re-enter password">
+                            <button id="toggle-confirm-password" type="button">
+                                 <i id="confirm-password-icon" class="fas fa-eye"  style="color: black;"></i>
+                            </button>
+                        </div>
+
+                    <hr>
+                    <p> Your password must have</p> <br>
+                    <p> <i class="fas fa-check-circle" style="color:rgb(44, 156, 44);" ></i> 8 to 20 characters</p> <br>
+                    <p> <i class="fas fa-check-circle" style="color:rgb(44, 156, 44);"></i> Letters, numbers and special characters</p>
+                </div>
+
+                <!-- XXXX -->
+                <div class="submit">
+                    <input type="submit" value="update" style="background-color: red;">
+                </div>
+                
+                <!-- JavaScript -->
+                <script>
+                function setupPasswordToggle(inputId, buttonId, iconId) {
+                    const passwordInput = document.getElementById(inputId);
+                    const toggleButton = document.getElementById(buttonId);
+                    const passwordIcon = document.getElementById(iconId);
+
+                    toggleButton.addEventListener("click", () => {
+                    // Toggle the input type
+                    const isPassword = passwordInput.type === "password";
+                    passwordInput.type = isPassword ? "text" : "password";
+                    passwordIcon.classList.toggle("fa-eye");
+                    passwordIcon.classList.toggle("fa-eye-slash");
+                    });
+                }
+
+                // Initialize toggles for each password field
+                setupPasswordToggle("old-password", "toggle-old-password", "old-password-icon");
+                setupPasswordToggle("new-password", "toggle-new-password", "new-password-icon");
+                setupPasswordToggle("confirm-password", "toggle-confirm-password", "confirm-password-icon");
+                </script>
+                
+            </form>
+        </div>
+    </div>  
+</body>
+</html>
